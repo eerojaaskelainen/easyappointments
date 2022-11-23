@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('Direktaccess till skriptet är inte tillåtet');
 // Danish
 $lang['page_title'] = 'Boka tid med ...';
-$lang['service_and_provider'] = 'Välj tjänst och leverantör';
+$lang['service_and_provider'] = ' ';
 $lang['select_service'] = 'Välj tjänst';
 $lang['select_provider'] = 'Välj leverantör';
 $lang['duration'] = 'Längd:';
@@ -42,7 +42,7 @@ $lang['thank_you_for_appointment'] = 'Tack för din bokning hos oss. Här nedan 
 $lang['appointment_details_title'] = 'Information om din bokning';
 $lang['customer_details_title'] = 'Kunduppgifter';
 $lang['service'] = 'Tjänst';
-$lang['provider'] = 'Facilitet / Leverantör';
+$lang['provider'] = 'Facilitet';
 $lang['customer'] = 'Kund';
 $lang['start'] = 'Start';
 $lang['end'] = 'Slut';

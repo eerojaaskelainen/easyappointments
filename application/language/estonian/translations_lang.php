@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 // Estonian
 $lang['page_title'] = 'Broneeri aeg';
-$lang['service_and_provider'] = 'Vali teenus ja isik';
+$lang['service_and_provider'] = ' ';
 $lang['select_service'] = 'Vali teenus';
 $lang['select_provider'] = 'Vali isik';
 $lang['duration'] = 'Kestvus';
@@ -42,7 +42,7 @@ $lang['thank_you_for_appointment'] = 'Suur tänu aja broneerimise eest. Broneeri
 $lang['appointment_details_title'] = 'Broneeringu detailid';
 $lang['customer_details_title'] = 'Kliendi andmed';
 $lang['service'] = 'Teenus';
-$lang['provider'] = 'Rajatis / Teenusepakkuja';
+$lang['provider'] = 'Rajatis';
 $lang['customer'] = 'Klient';
 $lang['start'] = 'Algusaeg';
 $lang['end'] = 'Lõpuaeg';
