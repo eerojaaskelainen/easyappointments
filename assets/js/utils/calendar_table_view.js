@@ -1361,6 +1361,14 @@ App.Utils.CalendarTableView = (function () {
 
             $html = $('<div/>', {
                 'html': [
+                    $('<strong/>',{
+                        'class':'d-inline-block me-2',
+                        'text':lang('hash')
+                    }),
+                    $('<span />',{
+                        text: `${info.event.extendedProps.data.hash}`
+                    }),
+                    $('<br/>'),
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
                         'text': lang('start')

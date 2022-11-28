@@ -9,6 +9,7 @@
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
+
 /**
  * Default calendar view utility.
  *
@@ -581,6 +582,14 @@ App.Utils.CalendarDefaultView = (function () {
 
             $html = $('<div/>', {
                 'html': [
+                    $('<strong/>',{
+                        'class':'d-inline-block me-2',
+                        'text':lang('hash')
+                    }),
+                    $('<span />',{
+                        text: `${info.event.extendedProps.data.hash}`
+                    }),
+                    $('<br/>'),
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
                         'text': lang('start')
