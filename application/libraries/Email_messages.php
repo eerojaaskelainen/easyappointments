@@ -133,6 +133,7 @@ class Email_messages {
             'customer_email' => $customer['email'],
             'customer_phone' => $customer['phone_number'],
             'customer_address' => $customer['address'],
+            'ratsukkoja' => $appointment['ratsukkoja']
         ], TRUE);
 
         $this->CI->email->from($settings['company_email'], $settings['company_email']);

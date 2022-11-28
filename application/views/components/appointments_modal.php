@@ -180,6 +180,11 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="ratsukot" class="form-label"><?= lang('ratsukoita') ?></label>
+                                    <input id="ratsukot" type="number" class="form-control" min="1" />
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="appointment-notes" class="form-label"><?= lang('notes') ?></label>
                                     <textarea id="appointment-notes" class="form-control" rows="3"></textarea>
                                 </div>

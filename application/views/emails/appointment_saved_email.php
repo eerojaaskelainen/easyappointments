@@ -57,6 +57,10 @@
                 <td class="label" style="padding: 3px;font-weight: bold;"><?= lang('timezone') ?></td>
                 <td style="padding: 3px;"><?= $appointment_timezone ?></td>
             </tr>
+            <tr>
+                <td class="label" style="padding: 3px;font-weight: bold;"><?= lang('ratsukoita') ?></td>
+                <td style="padding: 3px;"><?= $ratsukkoja ?></td>
+            </tr>
         </table>
 
         <h2><?= lang('customer_details_title') ?></h2>

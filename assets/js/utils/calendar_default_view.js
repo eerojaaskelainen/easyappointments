@@ -156,6 +156,7 @@ App.Utils.CalendarDefaultView = (function () {
                 $appointmentsModal.find('#appointment-status').val(appointment.status);
                 $appointmentsModal.find('#appointment-notes').val(appointment.notes);
                 $appointmentsModal.find('#customer-notes').val(customer.notes);
+                $appointmentsModal.find('#ratsukot').val(appointment.ratsukkoja);
 
                 App.Components.ColorSelection.setColor(
                     $appointmentsModal.find('#appointment-color'),
@@ -680,7 +681,14 @@ App.Utils.CalendarDefaultView = (function () {
                         'text': info.event.extendedProps.data.customer.phone_number || '-'
                     }),
                     $('<br/>'),
-
+                    $('<strong/>',{
+                        class:'d-inline-block me-2',
+                        text: lang('ratsukoita')
+                    }),
+                    $('<span />',{
+                        text : info.event.extendedProps.data.ratsukkoja
+                    }),
+                    $('<br/>'),
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
                         'text': lang('notes')
@@ -1722,6 +1730,7 @@ App.Utils.CalendarDefaultView = (function () {
             $appointmentsModal.find('#appointment-status').val(appointment.status);
             $appointmentsModal.find('#appointment-notes').val(appointment.notes);
             $appointmentsModal.find('#customer-notes').val(customer.notes);
+            $appointmentsModal.find('#ratsukot').val(appointment.ratsukkoja);
 
             App.Components.ColorSelection.setColor($appointmentsModal.find('#appointment-color'), appointment.color);
 

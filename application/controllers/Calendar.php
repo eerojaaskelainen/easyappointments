@@ -256,6 +256,7 @@ class Calendar extends EA_Controller {
                     'id_users_provider',
                     'id_users_customer',
                     'id_services',
+                    'ratsukkoja',
                 ]);
 
                 $appointment['id'] = $this->appointments_model->save($appointment);

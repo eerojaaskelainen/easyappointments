@@ -34,6 +34,7 @@ App.Pages.Booking = (function () {
     const $availableHours = $('#available-hours');
     const $bookAppointmentSubmit = $('#book-appointment-submit');
     const $deletePersonalInformation = $('#delete-personal-information');
+    const $ratsukot = $('#ratsukoita');
 
     /**
      * Determines the functionality of the page.
@@ -639,6 +640,10 @@ App.Pages.Booking = (function () {
                             'prop': {
                                 'hidden': !servicePrice
                             }
+                        }),
+                        $('<br/>'),
+                        $('<span/>', {
+                            'text': lang('ratsukoita') + ': ' + $ratsukot.val()
                         })
                     ]
                 })
@@ -703,7 +708,7 @@ App.Pages.Booking = (function () {
             address: $address.val(),
             city: $city.val(),
             zip_code: $zipCode.val(),
-            timezone: $selectTimezone.val()
+            timezone: $selectTimezone.val(),
         };
 
         data.appointment = {
@@ -716,7 +721,8 @@ App.Pages.Booking = (function () {
             notes: $notes.val(),
             is_unavailability: false,
             id_users_provider: $selectProvider.val(),
-            id_services: $selectService.val()
+            id_services: $selectService.val(),
+            ratsukkoja:$ratsukot.val(),
         };
 
         data.manage_mode = manageMode;
@@ -795,6 +801,7 @@ App.Pages.Booking = (function () {
             }
             const appointmentNotes = appointment.notes !== null ? appointment.notes : '';
             $notes.val(appointmentNotes);
+            $ratsukot.val(appointment.ratsukkoja);
 
             updateConfirmFrame();
 

@@ -26,6 +26,7 @@ class Appointments_model extends EA_Model {
         'id_users_provider' => 'integer',
         'id_users_customer' => 'integer',
         'id_services' => 'integer',
+        'ratsukkoja'  => 'integer',
     ];
 
     /**
@@ -96,6 +97,7 @@ class Appointments_model extends EA_Model {
             || empty($appointment['id_services'])
             || empty($appointment['id_users_provider'])
             || empty($appointment['id_users_customer'])
+            || !isset($appointment['ratsukkoja'])
         )
         {
             throw new InvalidArgumentException('Not all required fields are provided: ' . print_r($appointment, TRUE));
@@ -160,6 +162,11 @@ class Appointments_model extends EA_Model {
             if ( ! $count)
             {
                 throw new InvalidArgumentException('Appointment service id is invalid.');
+            }
+
+            if (! filter_var($appointment['ratsukkoja'],FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]))
+            {
+                throw new InvalidArgumentException(lang('ratsukko_one_minimum'));
             }
         }
     }
@@ -567,7 +574,8 @@ class Appointments_model extends EA_Model {
             'customerId' => $appointment['id_users_customer'] !== NULL ? (int)$appointment['id_users_customer'] : NULL,
             'providerId' => $appointment['id_users_provider'] !== NULL ? (int)$appointment['id_users_provider'] : NULL,
             'serviceId' => $appointment['id_services'] !== NULL ? (int)$appointment['id_services'] : NULL,
-            'googleCalendarId' => $appointment['id_google_calendar'] !== NULL ? (int)$appointment['id_google_calendar'] : NULL
+            'googleCalendarId' => $appointment['id_google_calendar'] !== NULL ? (int)$appointment['id_google_calendar'] : NULL,
+            'ratsukkoja' => $appointment['ratsukkoja'] !== NULL ? (int)$appointment['ratsukkoja'] : NULL
         ];
 
         $appointment = $encoded_resource;
@@ -636,6 +644,11 @@ class Appointments_model extends EA_Model {
         if (array_key_exists('googleCalendarId', $appointment))
         {
             $decoded_request['id_google_calendar'] = $appointment['googleCalendarId'];
+        }
+
+        if (array_key_exists('ratsukkoja', $appointment))
+        {
+            $decoded_request['ratsukkoja'] = $appointment['ratsukkoja'];
         }
 
         $decoded_request['is_unavailability'] = FALSE;

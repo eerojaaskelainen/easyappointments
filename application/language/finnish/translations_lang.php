@@ -16,7 +16,7 @@ $lang['first_name'] = 'Etunimi';
 $lang['last_name'] = 'Sukunimi';
 $lang['email'] = 'Sähköposti';
 $lang['phone_number'] = 'Puhelinnumero';
-$lang['phone'] = 'Phone';
+$lang['phone'] = 'Puhelin';
 $lang['address'] = 'Osoite';
 $lang['city'] = 'Kaupunki';
 $lang['zip_code'] = 'Postinumero';
@@ -408,4 +408,6 @@ $lang['at_least_one_field'] = 'Vähintään yksi kenttä on näytettävä varaus
 $lang['status'] = 'Tila';
 $lang['appointment_status_options'] = 'Varauksen tila-asetukset';
 $lang['appointment_status_options_info'] = 'Määritä lista saatavilla olevista varauksen tilannevaihtoehdoista joita voidaan käyttää kalenterisivulla (ensimmäinen on valittu oletuksena).';
+$lang['ratsukko_one_minimum'] = 'Ratsukkoja pitää olla vähintään yksi';
+$lang['ratsukoita'] = 'Ratsukoita';
 // End

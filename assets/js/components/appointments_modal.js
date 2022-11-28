@@ -46,6 +46,7 @@ App.Components.AppointmentsModal = (function () {
     const $insertAppointment = $('#insert-appointment');
     const $existingCustomersList = $('#existing-customers-list');
     const $newCustomer = $('#new-customer');
+    const $ratsukot = $('#ratsukot');
 
     /**
      * Update the displayed timezone.
@@ -92,7 +93,8 @@ App.Components.AppointmentsModal = (function () {
                 color: App.Components.ColorSelection.getColor($appointmentColor),
                 status: $appointmentStatus.val(),
                 notes: $appointmentNotes.val(),
-                is_unavailability: Number(false)
+                is_unavailability: Number(false),
+                ratsukkoja: Number($ratsukot.val()),
             };
 
             if ($appointmentId.val() !== '') {
@@ -399,6 +401,7 @@ App.Components.AppointmentsModal = (function () {
             $language.val('english');
             $timezone.val('UTC');
             $customerNotes.val('');
+            $ratsukot.val('');
         });
     }
 
@@ -417,6 +420,7 @@ App.Components.AppointmentsModal = (function () {
 
         $language.val('english');
         $timezone.val('UTC');
+        $ratsukot.val('1');
 
         // Reset color.
         $appointmentColor.find('.color-selection-option:first').trigger('click');

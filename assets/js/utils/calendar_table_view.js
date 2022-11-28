@@ -232,6 +232,7 @@ App.Utils.CalendarTableView = (function () {
                 $appointmentsModal.find('#appointment-status').val(appointment.status);
                 $appointmentsModal.find('#appointment-notes').val(appointment.notes);
                 $appointmentsModal.find('#customer-notes').val(customer.notes);
+                $appointmentsModal.find('#ratsukot').val(appointment.ratsukkoja);
 
                 App.Components.ColorSelection.setColor(
                     $appointmentsModal.find('#appointment-color'),
@@ -1455,6 +1456,14 @@ App.Utils.CalendarTableView = (function () {
                     App.Utils.CalendarEventPopover.renderPhoneIcon(info.event.extendedProps.data.customer.phone_number),
                     $('<span/>', {
                         'text': info.event.extendedProps.data.customer.phone_number || '-'
+                    }),
+                    $('<br/>'),
+                    $('<strong/>',{
+                        class:'d-inline-block me-2',
+                        text: lang('ratsukoita')
+                    }),
+                    $('<span />',{
+                        text : info.event.extendedProps.data.ratsukkoja
                     }),
                     $('<br/>'),
 

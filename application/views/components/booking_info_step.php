@@ -115,6 +115,15 @@
                         <input type="text" id="zip-code" class="<?= $require_zip_code ? 'required' : '' ?> form-control" maxlength="120"/>
                     </div>
                 <?php endif ?>
+
+                    <div class="mb-3">
+                        <label for="zip-code" class="form-label">
+                            <?= lang('ratsukoita') ?>
+                                <span class="text-danger">*</span>
+                        </label>
+                        <input type="number" id="ratsukoita" class="required form-control" maxlength="120" value="1" min="1" />
+                    </div>
+
                 <?php if ($display_notes): ?>
                     <div class="mb-3">
                         <label for="notes" class="form-label">
