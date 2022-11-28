@@ -82,6 +82,8 @@
                 <td style="padding: 3px;"><?= $customer_address ?></td>
             </tr>
         </table>
+        
+        <p><?=$mobilepay_link?></p>
 
         <h2><?= lang('appointment_link_title') ?></h2>
         <a href="<?= $appointment_link ?>" style="width: 600px;"><?= $appointment_link ?></a>

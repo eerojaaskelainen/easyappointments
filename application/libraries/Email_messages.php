@@ -41,6 +41,7 @@ class Email_messages {
         $this->CI->load->library('email');
         $this->CI->load->library('ics_file');
         $this->CI->load->library('timezones');
+        $this->CI->load->library('MobilePay');
     }
 
     /**
@@ -133,7 +134,8 @@ class Email_messages {
             'customer_email' => $customer['email'],
             'customer_phone' => $customer['phone_number'],
             'customer_address' => $customer['address'],
-            'ratsukkoja' => $appointment['ratsukkoja']
+            'ratsukkoja' => $appointment['ratsukkoja'],
+            'mobilepay_link' => $this->CI->mobilepay->renderPaymentLink($appointment)
         ], TRUE);
 
         $this->CI->email->from($settings['company_email'], $settings['company_email']);

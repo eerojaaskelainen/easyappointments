@@ -55,6 +55,18 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label class="form-label" for="company-email">
+                                        <?= lang('company_mobilepay') ?>
+                                    </label>
+                                    <input id="company-mobilepay" data-field="company_mobilepay" class="form-control">
+                                    <div class="form-text text-muted">
+                                        <small>
+                                            <?= lang('company_mobilepay_hint') ?>
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
                                     <label class="form-label" for="company-link">
                                         <?= lang('company_link') ?>
                                         <span class="text-danger">*</span>

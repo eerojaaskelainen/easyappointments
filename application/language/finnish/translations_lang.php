@@ -410,4 +410,10 @@ $lang['appointment_status_options'] = 'Varauksen tila-asetukset';
 $lang['appointment_status_options_info'] = 'Määritä lista saatavilla olevista varauksen tilannevaihtoehdoista joita voidaan käyttää kalenterisivulla (ensimmäinen on valittu oletuksena).';
 $lang['ratsukko_one_minimum'] = 'Ratsukkoja pitää olla vähintään yksi';
 $lang['ratsukoita'] = 'Ratsukoita';
+$lang['company_mobilepay'] = 'MobilePay maksunumero';
+$lang['company_mobilepay_hint'] = 'Jos yrityksellä on käytössä MobilePay, voit lisätä sen numeron. Varauslinkki lisätään vahvistussähköpostiin';
+$lang['company_mobilepay_comment'] = 'Varaus {hash}: {service}';
+$lang['company_mobilepay_paymentlink'] = '<h2>Varausmaksu</h3><p>Suorita varausmaksu MobilePaylla <a href="{link}">tästä</a>, tai lähetä {price} numeroon {mobilepay_number}.</p>';
+$lang['company_mobilepay_payment_general'] = 'Suorita varausmaksu MobilePaylla numeroon {mobilepay_number}.';
+$lang['booking_additional_information'] = '<p>Varausmaksu suoritetaan MobilePay</p>';
 // End
