@@ -413,6 +413,6 @@ $lang['ratsukoita'] = 'Attendants';
 $lang['company_mobilepay'] = 'MobilePay payment number';
 $lang['company_mobilepay_hint'] = 'If company has MobilePay, you can add number here. Payment link will be appended to emails if service has price.';
 $lang['company_mobilepay_comment'] = 'Booking {hash}: {service}';
-$lang['company_mobilepay_paymentlink'] = '<h2>Booking Fee</h3><p>Pay via MobilePay <a href="{link}">here</a>, or send {price} to number {mobilepay_number}.</p>';
+$lang['company_mobilepay_paymentlink'] = '<h2>Booking Fee</h2><p>Pay via MobilePay <a href="{link}">here</a>, or send {price} to number {mobilepay_number}.</p>';
 $lang['company_mobilepay_payment_general'] = 'Commit Booking fee to number {mobilepay_number}.';
 // End

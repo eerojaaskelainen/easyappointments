@@ -413,7 +413,7 @@ $lang['ratsukoita'] = 'Ratsukoita';
 $lang['company_mobilepay'] = 'MobilePay maksunumero';
 $lang['company_mobilepay_hint'] = 'Jos yrityksellä on käytössä MobilePay, voit lisätä sen numeron. Varauslinkki lisätään vahvistussähköpostiin';
 $lang['company_mobilepay_comment'] = 'Varaus {hash}: {service}';
-$lang['company_mobilepay_paymentlink'] = '<h2>Varausmaksu</h3><p>Suorita varausmaksu MobilePaylla <a href="{link}">tästä</a>, tai lähetä {price} numeroon {mobilepay_number}.</p>';
+$lang['company_mobilepay_paymentlink'] = '<h2>Varausmaksu</h2><p>Suorita varausmaksu MobilePaylla <a href="{link}">tästä</a>, tai lähetä {price} numeroon {mobilepay_number}.</p>';
 $lang['company_mobilepay_payment_general'] = 'Suorita varausmaksu MobilePaylla numeroon {mobilepay_number}.';
 $lang['booking_additional_information'] = '<p>Varausmaksu suoritetaan MobilePay</p>';
 // End
