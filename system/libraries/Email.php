@@ -1084,8 +1084,14 @@ class CI_Email {
 		// Reduce multiple spaces
 		$body = preg_replace('| +|', ' ', $body);
 
+		// If SMTP is to be sent, use max chars per line to prevent message garble.
+		// Max chars per RFC2822 is 998.
+		// See https://stackoverflow.com/a/44362021
+		$charlim = $this->protocol == 'smtp'?
+			998:76;
+
 		return ($this->wordwrap)
-			? $this->word_wrap($body, 76)
+			? $this->word_wrap($body, $charlim)
 			: $body;
 	}
 
@@ -1500,6 +1506,11 @@ class CI_Email {
 		{
 			return quoted_printable_encode($str);
 		}
+		// If SMTP is to be sent, use max chars per line to prevent message garble.
+		// Max chars per RFC2822 is 998.
+		// See https://stackoverflow.com/a/44362021
+		$charlim = $this->protocol == 'smtp'?
+			998:76;
 
 		// Reduce multiple spaces & remove nulls
 		$str = preg_replace(array('| +|', '/\x00+/'), array(' ', ''), $str);
@@ -1550,7 +1561,7 @@ class CI_Email {
 
 				// If we're at the character limit, add the line to the output,
 				// reset our temp variable, and keep on chuggin'
-				if ((self::strlen($temp) + self::strlen($char)) >= 76)
+				if ((self::strlen($temp) + self::strlen($char)) >= $charlim)
 				{
 					$output .= $temp.$escape.$this->crlf;
 					$temp = '';
