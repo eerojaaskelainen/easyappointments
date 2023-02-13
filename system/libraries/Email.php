@@ -374,6 +374,11 @@ class CI_Email {
 	 */
 	protected static $func_overload;
 
+	/**
+	 * Whether to force sender to be same as smtp_user
+	 * @var bool
+	 */
+	protected $force_sender 	= FALSE;
 	// --------------------------------------------------------------------
 
 	/**
@@ -1672,6 +1677,15 @@ class CI_Email {
 		{
 			$this->_set_error_message('lang:email_no_from');
 			return FALSE;
+		}
+		if ($this->force_sender && !empty($this->smtp_user))
+		{
+			$pm = array();
+			if (preg_match('/<(.*)>/',$this->_headers['From'],$pm))
+			{
+				$this->reply_to($pm[1]);
+			}
+			$this->from($this->smtp_user);
 		}
 
 		if ($this->_replyto_flag === FALSE)

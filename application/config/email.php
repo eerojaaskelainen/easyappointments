@@ -14,3 +14,4 @@ $config['mailtype'] = 'html'; // or 'text'
 // $config['smtp_pass'] = '';
 // $config['smtp_crypto'] = 'ssl'; // or 'tls'
 // $config['smtp_port'] = 25;
+//$config['force_sender'] = TRUE; // When SMTP enabled, always use smtp_user as sender
