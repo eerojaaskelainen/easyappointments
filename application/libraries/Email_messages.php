@@ -138,7 +138,7 @@ class Email_messages {
             'mobilepay_link' => $this->CI->mobilepay->renderPaymentLink($appointment)
         ], TRUE);
 
-        $this->CI->email->from($settings['company_email'], $settings['company_email']);
+        $this->CI->email->from($settings['company_email'], $settings['company_name']);
 
         $this->CI->email->to($recipient_email);
 
@@ -234,7 +234,7 @@ class Email_messages {
             'reason' => $reason,
         ], TRUE);
 
-        $this->CI->email->from($settings['company_email'], $settings['company_email']);
+        $this->CI->email->from($settings['company_email'], $settings['company_name']);
 
         $this->CI->email->to($recipient_email);
 
@@ -269,7 +269,7 @@ class Email_messages {
             'company_link' => $settings['company_link'],
         ], TRUE);
 
-        $this->CI->email->from($settings['company_email'], $settings['company_email']);
+        $this->CI->email->from($settings['company_email'], $settings['company_name']);
 
         $this->CI->email->to($recipient_email);
 
