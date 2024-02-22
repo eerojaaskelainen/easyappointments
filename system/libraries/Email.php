@@ -374,6 +374,11 @@ class CI_Email {
 	 */
 	protected static $func_overload;
 
+	/**
+	 * Whether to force sender to be same as smtp_user
+	 * @var bool
+	 */
+	protected $force_sender 	= FALSE;
 	// --------------------------------------------------------------------
 
 	/**
@@ -1084,8 +1089,14 @@ class CI_Email {
 		// Reduce multiple spaces
 		$body = preg_replace('| +|', ' ', $body);
 
+		// If SMTP is to be sent, use max chars per line to prevent message garble.
+		// Max chars per RFC2822 is 998.
+		// See https://stackoverflow.com/a/44362021
+		$charlim = $this->protocol == 'smtp'?
+			998:76;
+
 		return ($this->wordwrap)
-			? $this->word_wrap($body, 76)
+			? $this->word_wrap($body, $charlim)
 			: $body;
 	}
 
@@ -1500,6 +1511,11 @@ class CI_Email {
 		{
 			return quoted_printable_encode($str);
 		}
+		// If SMTP is to be sent, use max chars per line to prevent message garble.
+		// Max chars per RFC2822 is 998.
+		// See https://stackoverflow.com/a/44362021
+		$charlim = $this->protocol == 'smtp'?
+			998:76;
 
 		// Reduce multiple spaces & remove nulls
 		$str = preg_replace(array('| +|', '/\x00+/'), array(' ', ''), $str);
@@ -1550,7 +1566,7 @@ class CI_Email {
 
 				// If we're at the character limit, add the line to the output,
 				// reset our temp variable, and keep on chuggin'
-				if ((self::strlen($temp) + self::strlen($char)) >= 76)
+				if ((self::strlen($temp) + self::strlen($char)) >= $charlim)
 				{
 					$output .= $temp.$escape.$this->crlf;
 					$temp = '';
@@ -1661,6 +1677,15 @@ class CI_Email {
 		{
 			$this->_set_error_message('lang:email_no_from');
 			return FALSE;
+		}
+		if ($this->force_sender && !empty($this->smtp_user))
+		{
+			$pm = array();
+			if (preg_match('/<(.*)>/',$this->_headers['From'],$pm))
+			{
+				$this->reply_to($pm[1]);
+			}
+			$this->from($this->smtp_user);
 		}
 
 		if ($this->_replyto_flag === FALSE)
