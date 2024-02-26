@@ -237,6 +237,7 @@ App.Utils.CalendarTableView = (function () {
                 $appointmentsModal.find('#custom-field-3').val(customer.custom_field_3);
                 $appointmentsModal.find('#custom-field-4').val(customer.custom_field_4);
                 $appointmentsModal.find('#custom-field-5').val(customer.custom_field_5);
+                $appointmentsModal.find('#ratsukot').val(appointment.ratsukkoja);
 
                 App.Components.ColorSelection.setColor(
                     $appointmentsModal.find('#appointment-color'),
@@ -1309,6 +1310,14 @@ App.Utils.CalendarTableView = (function () {
 
             $html = $('<div/>', {
                 'html': [
+                    $('<strong/>',{
+                        'class':'d-inline-block me-2',
+                        'text':lang('hash')
+                    }),
+                    $('<span />',{
+                        text: `${info.event.extendedProps.data.hash}`
+                    }),
+                    $('<br/>'),
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
                         'text': lang('start'),
@@ -1404,6 +1413,14 @@ App.Utils.CalendarTableView = (function () {
                     App.Utils.CalendarEventPopover.renderPhoneIcon(info.event.extendedProps.data.customer.phone_number),
                     $('<span/>', {
                         'text': info.event.extendedProps.data.customer.phone_number || '-',
+                    }),
+                    $('<br/>'),
+                    $('<strong/>',{
+                        class:'d-inline-block me-2',
+                        text: lang('ratsukoita')
+                    }),
+                    $('<span />',{
+                        text : info.event.extendedProps.data.ratsukkoja
                     }),
                     $('<br/>'),
 

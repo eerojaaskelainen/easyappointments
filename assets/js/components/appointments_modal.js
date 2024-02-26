@@ -53,6 +53,7 @@ App.Components.AppointmentsModal = (function () {
     const $customField5 = $('#custom-field-5');
 
     const moment = window.moment;
+    const $ratsukot = $('#ratsukot');
 
     /**
      * Update the displayed timezone.
@@ -103,6 +104,7 @@ App.Components.AppointmentsModal = (function () {
                 status: $appointmentStatus.val(),
                 notes: $appointmentNotes.val(),
                 is_unavailability: Number(false),
+                ratsukkoja: Number($ratsukot.val()),
             };
 
             if ($appointmentId.val() !== '') {
@@ -428,6 +430,7 @@ App.Components.AppointmentsModal = (function () {
             $customField3.val('');
             $customField4.val('');
             $customField5.val('');
+            $ratsukot.val('');
         });
     }
 
@@ -447,6 +450,7 @@ App.Components.AppointmentsModal = (function () {
 
         $language.val('english');
         $timezone.val('UTC');
+        $ratsukot.val('1');
 
         // Reset color.
         $appointmentColor.find('.color-selection-option:first').trigger('click');

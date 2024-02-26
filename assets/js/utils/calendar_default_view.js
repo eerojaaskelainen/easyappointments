@@ -9,6 +9,7 @@
  * @since       v1.5.0
  * ---------------------------------------------------------------------------- */
 
+
 /**
  * Default calendar view utility.
  *
@@ -163,6 +164,7 @@ App.Utils.CalendarDefaultView = (function () {
                 $appointmentsModal.find('#custom-field-3').val(customer.custom_field_3);
                 $appointmentsModal.find('#custom-field-4').val(customer.custom_field_4);
                 $appointmentsModal.find('#custom-field-5').val(customer.custom_field_5);
+                $appointmentsModal.find('#ratsukot').val(appointment.ratsukkoja);
 
                 App.Components.ColorSelection.setColor(
                     $appointmentsModal.find('#appointment-color'),
@@ -606,6 +608,14 @@ App.Utils.CalendarDefaultView = (function () {
 
             $html = $('<div/>', {
                 'html': [
+                    $('<strong/>',{
+                        'class':'d-inline-block me-2',
+                        'text':lang('hash')
+                    }),
+                    $('<span />',{
+                        text: `${info.event.extendedProps.data.hash}`
+                    }),
+                    $('<br/>'),
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
                         'text': lang('start'),
@@ -706,7 +716,14 @@ App.Utils.CalendarDefaultView = (function () {
                         'text': info.event.extendedProps.data.customer.phone_number || '-',
                     }),
                     $('<br/>'),
-
+                    $('<strong/>',{
+                        class:'d-inline-block me-2',
+                        text: lang('ratsukoita')
+                    }),
+                    $('<span />',{
+                        text : info.event.extendedProps.data.ratsukkoja
+                    }),
+                    $('<br/>'),
                     $('<strong/>', {
                         'class': 'd-inline-block me-2',
                         'text': lang('notes'),
@@ -1623,6 +1640,7 @@ App.Utils.CalendarDefaultView = (function () {
             $appointmentsModal.find('#custom-field-3').val(customer.custom_field_3);
             $appointmentsModal.find('#custom-field-4').val(customer.custom_field_4);
             $appointmentsModal.find('#custom-field-5').val(customer.custom_field_5);
+            $appointmentsModal.find('#ratsukot').val(appointment.ratsukkoja);
 
             App.Components.ColorSelection.setColor($appointmentsModal.find('#appointment-color'), appointment.color);
 

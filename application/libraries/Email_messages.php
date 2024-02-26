@@ -42,6 +42,7 @@ class Email_messages
         $this->CI->load->library('email');
         $this->CI->load->library('ics_file');
         $this->CI->load->library('timezones');
+        $this->CI->load->library('MobilePay');
     }
 
     /**
@@ -102,11 +103,13 @@ class Email_messages
                 'settings' => $settings,
                 'timezone' => $timezone,
                 'appointment_link' => $appointment_link,
+                'ratsukkoja' => $appointment['ratsukkoja'],
+                'mobilepay_link' => $this->CI->mobilepay->renderPaymentLink($appointment)
             ],
             true,
         );
 
-        $this->CI->email->from($settings['company_email'], $settings['company_email']);
+        $this->CI->email->from($settings['company_email'], $settings['company_name']);
 
         $this->CI->email->to($recipient_email);
 
@@ -175,7 +178,7 @@ class Email_messages
             true,
         );
 
-        $this->CI->email->from($settings['company_email'], $settings['company_email']);
+        $this->CI->email->from($settings['company_email'], $settings['company_name']);
 
         $this->CI->email->to($recipient_email);
 
@@ -207,7 +210,7 @@ class Email_messages
             true,
         );
 
-        $this->CI->email->from($settings['company_email'], $settings['company_email']);
+        $this->CI->email->from($settings['company_email'], $settings['company_name']);
 
         $this->CI->email->to($recipient_email);
 

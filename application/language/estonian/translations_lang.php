@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 // Estonian
 $lang['page_title'] = 'Broneeri aeg';
-$lang['service_and_provider'] = 'Vali teenus ja isik';
+$lang['service_and_provider'] = ' ';
 $lang['select_service'] = 'Vali teenus';
 $lang['select_provider'] = 'Vali isik';
 $lang['duration'] = 'Kestvus';
@@ -42,7 +42,7 @@ $lang['thank_you_for_appointment'] = 'Suur tänu aja broneerimise eest. Broneeri
 $lang['appointment_details_title'] = 'Broneeringu detailid';
 $lang['customer_details_title'] = 'Kliendi andmed';
 $lang['service'] = 'Teenus';
-$lang['provider'] = 'Teenusepakkuja';
+$lang['provider'] = 'Rajatis';
 $lang['customer'] = 'Klient';
 $lang['start'] = 'Algusaeg';
 $lang['end'] = 'Lõpuaeg';
@@ -453,4 +453,11 @@ $lang['webhook_saved'] = 'Webhook saved successfully.';
 $lang['webhook_deleted'] = 'Webhook deleted successfully.';
 $lang['delete_webhook'] = 'Delete Webhook';
 $lang['contact_info'] = 'Contact Info';
+$lang['ratsukko_one_minimum'] = 'At least one attendant required';
+$lang['ratsukoita'] = 'Attendants';
+$lang['company_mobilepay'] = 'MobilePay payment number';
+$lang['company_mobilepay_hint'] = 'If company has MobilePay, you can add number here. Payment link will be appended to emails if service has price.';
+$lang['company_mobilepay_comment'] = 'Booking {hash}: {service}';
+$lang['company_mobilepay_paymentlink'] = '<h2>Booking Fee</h2><p>Pay via MobilePay <a href="{link}">here</a>, or send {price} to number {mobilepay_number}.</p>';
+$lang['company_mobilepay_payment_general'] = 'Commit Booking fee to number {mobilepay_number}.';
 // End

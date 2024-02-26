@@ -74,6 +74,12 @@ $ npm start
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
+To update migrations type
+
+```bash
+$ php index.php console migrate up
+```
+
 You can build the files by running `npm run build`. This command will bundle everything to a `build` directory.
 
 ## Installation

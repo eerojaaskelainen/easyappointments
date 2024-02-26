@@ -30,6 +30,9 @@ if ($request_uri === '.')
 {
     $request_uri = '';
 }
+// $request_uri might just be an empty backslash (at least when deving). So we prevent this:
+elseif ($request_uri == '\\')
+    $request_uri = '';
 
 $config['base_url'] = trim($protocol . $domain . $request_uri, '/');
 

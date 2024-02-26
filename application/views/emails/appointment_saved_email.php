@@ -115,6 +115,10 @@
                     </td>
                 </tr>
             <?php endif; ?>
+            <tr>
+                <td class="label" style="padding: 3px;font-weight: bold;"><?= lang('ratsukoita') ?></td>
+                <td style="padding: 3px;"><?= $ratsukkoja ?></td>
+            </tr>
         </table>
 
         <h2>
@@ -155,6 +159,8 @@
                 </td>
             </tr>
         </table>
+        
+        <p><?=$mobilepay_link?></p>
 
         <h2>
             <?= lang('appointment_link_title') ?>

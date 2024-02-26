@@ -41,6 +41,7 @@ App.Pages.Booking = (function () {
     const $customField5 = $('#custom-field-5');
     const tippy = window.tippy;
     const moment = window.moment;
+    const $ratsukot = $('#ratsukoita');
 
     /**
      * Determines the functionality of the page.
@@ -688,6 +689,51 @@ App.Pages.Booking = (function () {
         `);
 
         // Render the customer information
+        // OLD VERSION!!! EJ: Remove these
+        /*
+        $('<div/>', {
+            'html': [
+                $('<h4/>', {
+                    'text': lang('appointment')
+                }),
+                $('<p/>', {
+                    'html': [
+                        $('<span/>', {
+                            'text': lang('service') + ': ' + $selectService.find('option:selected').text()
+                        }),
+                        $('<br/>'),
+                        $('<span/>', {
+                            'text': lang('provider') + ': ' + $selectProvider.find('option:selected').text()
+                        }),
+                        $('<br/>'),
+                        $('<span/>', {
+                            'text':
+                                lang('start') +
+                                ': ' +
+                                selectedDate +
+                                ' ' +
+                                $availableHours.find('.selected-hour').text()
+                        }),
+                        $('<br/>'),
+                        $('<span/>', {
+                            'text': lang('timezone') + ': ' + $selectTimezone.find('option:selected').text()
+                        }),
+                        $('<br/>'),
+                        $('<span/>', {
+                            'text': lang('price') + ': ' + servicePrice + ' ' + serviceCurrency,
+                            'prop': {
+                                'hidden': !servicePrice
+                            }
+                        }),
+                        $('<br/>'),
+                        $('<span/>', {
+                            'text': lang('ratsukoita') + ': ' + $ratsukot.val()
+                        })
+                    ]
+                })
+            ]
+        }).appendTo('#appointment-details');
+        */
 
         const firstName = App.Utils.String.escapeHtml($firstName.val());
         const lastName = App.Utils.String.escapeHtml($lastName.val());
@@ -762,6 +808,7 @@ App.Pages.Booking = (function () {
             is_unavailability: false,
             id_users_provider: $selectProvider.val(),
             id_services: $selectService.val(),
+            ratsukkoja:$ratsukot.val(),
         };
 
         data.manage_mode = Number(manageMode);
@@ -841,6 +888,7 @@ App.Pages.Booking = (function () {
             }
             const appointmentNotes = appointment.notes !== null ? appointment.notes : '';
             $notes.val(appointmentNotes);
+            $ratsukot.val(appointment.ratsukkoja);
 
             $customField1.val(customer.custom_field_1);
             $customField2.val(customer.custom_field_2);

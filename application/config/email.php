@@ -16,3 +16,4 @@ $config['mailtype'] = 'html'; // or 'text'
 // $config['smtp_port'] = 25;
 $config['crlf'] = "\r\n";
 $config['newline'] = "\r\n";
+//$config['force_sender'] = TRUE; // When SMTP enabled, always use smtp_user as sender
