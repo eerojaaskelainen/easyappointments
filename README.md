@@ -93,6 +93,14 @@ You will need to perform the following steps to install the application on your 
 * Rename the "config-sample.php" file to "config.php" and update its contents based on your environment.
 * Open the browser on the Easy!Appointments URL and follow the installation guide.
 
+
+### Access Solutions addons ###
+You need to manually create column "ratsukkoja" in "ea_services" table. Do it with GUI or MySQL Daemon:
+```bash
+ALTER TABLE 'ea_appointments' ADD 'ratsukkoja' INT NULL DEFAULT '1' AFTER 'id_google_calendar';
+```
+
+
 That's it! You can now use Easy!Appointments at your will.
 
 You will find the latest release at [easyappointments.org](https://easyappointments.org).

@@ -118,6 +118,16 @@
                                maxlength="120"/>
                     </div>
                 <?php endif; ?>
+                <!-- EJ: Added Ratsukot -->
+                <?php if ($display_ratsukot):?>
+                    <div class="mb-3">
+                        <label for="ratsukoita" class="form-label">
+                            <?= lang('ratsukoita') ?>
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="number" id="ratsukoita" max="100" min="1" value="1" class="required form-control" />
+                    </div>
+                <?php endif;?>
                 <?php if ($display_notes): ?>
                     <div class="mb-3">
                         <label for="notes" class="form-label">

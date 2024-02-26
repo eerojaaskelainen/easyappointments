@@ -37,7 +37,7 @@
     'require_zip_code' => vars('require_zip_code'),
     'display_notes' => vars('display_notes'),
     'require_notes' => vars('require_notes'),
-    'display_ratsukot' => vars('display_ratsukot'),
+    'display_ratsukot' => true,// vars('display_ratsukot'),
 ]) ?>
 
 <!-- Appointment Data Confirmation -->

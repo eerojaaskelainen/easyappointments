@@ -685,55 +685,12 @@ App.Pages.Booking = (function () {
                     <i class="fas fa-cash-register me-2"></i>
                     ${Number(service.price).toFixed(2)} ${service.currency}
                 </div>
+                <div class="mb-2">
+                    ${lang('ratsukoita')}: ${$ratsukot.val()}
+                </div>
             </div>     
         `);
 
-        // Render the customer information
-        // OLD VERSION!!! EJ: Remove these
-        /*
-        $('<div/>', {
-            'html': [
-                $('<h4/>', {
-                    'text': lang('appointment')
-                }),
-                $('<p/>', {
-                    'html': [
-                        $('<span/>', {
-                            'text': lang('service') + ': ' + $selectService.find('option:selected').text()
-                        }),
-                        $('<br/>'),
-                        $('<span/>', {
-                            'text': lang('provider') + ': ' + $selectProvider.find('option:selected').text()
-                        }),
-                        $('<br/>'),
-                        $('<span/>', {
-                            'text':
-                                lang('start') +
-                                ': ' +
-                                selectedDate +
-                                ' ' +
-                                $availableHours.find('.selected-hour').text()
-                        }),
-                        $('<br/>'),
-                        $('<span/>', {
-                            'text': lang('timezone') + ': ' + $selectTimezone.find('option:selected').text()
-                        }),
-                        $('<br/>'),
-                        $('<span/>', {
-                            'text': lang('price') + ': ' + servicePrice + ' ' + serviceCurrency,
-                            'prop': {
-                                'hidden': !servicePrice
-                            }
-                        }),
-                        $('<br/>'),
-                        $('<span/>', {
-                            'text': lang('ratsukoita') + ': ' + $ratsukot.val()
-                        })
-                    ]
-                })
-            ]
-        }).appendTo('#appointment-details');
-        */
 
         const firstName = App.Utils.String.escapeHtml($firstName.val());
         const lastName = App.Utils.String.escapeHtml($lastName.val());
