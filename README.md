@@ -77,7 +77,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 To update migrations type
 
 ```bash
-$ php index.php console migrate up
+$ php index.php console migrate
 ```
 
 You can build the files by running `npm run build`. This command will bundle everything to a `build` directory.
